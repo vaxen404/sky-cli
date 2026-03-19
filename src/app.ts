@@ -1,7 +1,8 @@
-import "dotenv/config"
-import path from "path"
-import chalk from "chalk"
-import * as readline from "node:readline/promises"
+import 'dotenv/config'; 
+import path from 'node:path';
+import { fileURLToPath } from 'node:url';
+import chalk from "chalk";
+import * as readline from "node:readline/promises";
 
 dotenv.config({ path: path.resolve(process.cwd(), '.env') });
 
