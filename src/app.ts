@@ -4,11 +4,13 @@ import { fileURLToPath } from 'node:url';
 import chalk from "chalk";
 import * as readline from "node:readline/promises";
 
-dotenv.config({ path: path.resolve(process.cwd(), '.env') });
-
 const rl = readline.createInterface({input: process.stdin, output: process.stdout})
 
 const API_KEY = process.env.API_KEY;
+
+if (!API_KEY) {
+    console.log(chalk.red("Hata: API_KEY bulunamadı! .env dosyanızı kontrol edin."));
+}
 
 async function havaDurumu() {
     console.clear();
