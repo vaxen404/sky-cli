@@ -1,6 +1,9 @@
 import "dotenv/config"
+import path from "path"
 import chalk from "chalk"
 import * as readline from "node:readline/promises"
+
+dotenv.config({ path: path.resolve(process.cwd(), '.env') });
 
 const rl = readline.createInterface({input: process.stdin, output: process.stdout})
 
